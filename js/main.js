@@ -6,9 +6,9 @@ import { OrbitControls } from 'https://unpkg.com/three@0.162.0/examples/jsm/cont
 import { GLTFLoader } from 'https://unpkg.com/three@0.162.0/examples/jsm/loaders/GLTFLoader.js';
 
 ///////CREATE SCENE //////////////////
-let scene, camera, renderer, green, orange, red, blue, glob, globone, clock;
+let scene, camera, renderer, green, orange, red, blue, glob, redddd, clock;
 let sceneContainer = document.querySelector("#scene-container");
-let mixerGreen, mixerOrange, mixerRed, mixerBlue, mixerGlob, mixerGlobone; // Separate mixers for each animated object
+let mixerGreen, mixerOrange, mixerRed, mixerBlue, mixerGlob, mixerRedddd; // Separate mixers for each animated object
 
 // Audio variables
 let listener, sound, audioLoader;
@@ -56,7 +56,7 @@ function animate() {
     if (mixerRed) mixerRed.update(delta);
     if (mixerBlue) mixerBlue.update(delta);
     if (mixerGlob) mixerGlob.update(delta);
-    if (mixerGlobone) mixerGlobone.update(delta);
+    if (mixerRedddd) mixerRedddd.update(delta);
 
     renderer.render(scene, camera);
 }
@@ -124,54 +124,54 @@ loader.load('assets/G.gltf', function (gltf) {
     ///////////NUMBERS/////////
     /////1/////////// 
  
-loader.load('assets/ONE.gltf', function (gltf) {
-    globone = gltf.scene;
-    scene.add(globone);
-    globone.scale.set(200, 200, 200);
+// loader.load('assets/REDDDD.gltf', function (gltf) {
+//     redddd = gltf.scene;
+//     scene.add(redddd);
+//     redddd.scale.set(20, 20, 20);
 
-    // Set position of the glob model
-    globone.position.set(100, 0, 0);
+//     // Set position of the glob model
+//     redddd.position.set(50, 0, 0);
 
-    mixerGlobone = new THREE.AnimationMixer(globone);
-    gltf.animations.forEach(clip => {
-        let actionGlobone = mixerGlobone.clipAction(clip);
-        actionGlobone.play();
-    });
+//     mixerRedddd = new THREE.AnimationMixer(redddd);
+//     gltf.animations.forEach(clip => {
+//         let actionRedddd = mixerRedddd.clipAction(clip);
+//         actionRedddd.play();
+//     });
 
 
-    //////////SOUND/////////////////
-    audioLoader.load('assets/1.mp3', function(buffer) {
-        sound.setBuffer(buffer);
-        sound.setLoop(false);
-        sound.setVolume(0.5);
-    });
+//     //////////SOUND/////////////////
+//     audioLoader.load('assets/RED.mp3', function(buffer) {
+//         sound.setBuffer(buffer);
+//         sound.setLoop(false);
+//         sound.setVolume(0.5);
+//     });
 
-    // Add event listener to the model for click interaction
-    renderer.domElement.addEventListener('click', function(event) {
-        // Calculate mouse position in normalized device coordinates (-1 to +1) for both components.
-        const mouse = new THREE.Vector2();
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+//     // Add event listener to the model for click interaction
+//     renderer.domElement.addEventListener('click', function(event) {
+//         // Calculate mouse position in normalized device coordinates (-1 to +1) for both components.
+//         const mouse = new THREE.Vector2();
+//         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-        // Raycaster for detecting clicks on the model
-        const raycaster = new THREE.Raycaster();
-        raycaster.setFromCamera(mouse, camera);
+//         // Raycaster for detecting clicks on the model
+//         const raycaster = new THREE.Raycaster();
+//         raycaster.setFromCamera(mouse, camera);
 
-        // Check if the ray intersects the glob model
-        const intersects = raycaster.intersectObject(globone, true);
-        if (intersects.length > 0) {
-            sound.play();
-        }
-    });
+//         // Check if the ray intersects the glob model
+//         const intersects = raycaster.intersectObject(redddd, true);
+//         if (intersects.length > 0) {
+//             sound.play();
+//         }
+//     });
 
 
 
 
 
     
-    }, undefined, function (error) {
-        console.error('An error happened while loading the model:', error);
-    });
+//     }, undefined, function (error) {
+//         console.error('An error happened while loading the model:', error);
+//     });
 
 
 
