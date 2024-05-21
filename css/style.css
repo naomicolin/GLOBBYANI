@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Marloa'; /* Specify a name for your font family */
+    src: url('fonts/marola.TTF') format('truetype'); /* Correct the file path if necessary and the format */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevents scrollbars from appearing */
+}
+
+#scene-container {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: #dadb11; /* Sets the background color */
+    
+}
+
+/* .title { */
+    /* font-family: 'Marloa'; /* Ensure this matches the name given in the @font-face rule */
+    /* text-align: center; */ 
+    /* color: #FFFFFF; */
+    /* margin: 0px 0;
+    font-size: 70px; */
+/* } */
