@@ -43,23 +43,29 @@ function init() {
 
     // Load models with their sounds and animations
     loadModelAndSound('assets/GREEN.gltf', [-10, 40, 0], [5, 5, 5], 'assets/GREEN.mp3');
-    loadModelAndSound('assets/ORANGE.gltf', [50, 20, 0], [6, 6, 6], 'assets/GLOBBY!.mp3');
+    loadModelAndSound('assets/ORANGE.gltf', [50, 24, 0], [6, 6, 6], 'assets/GLOBBY!.mp3');
     loadModelAndSound('assets/RED.gltf', [-50, 1, 0], [5, 5, 5], 'assets/RED.mp3');
     loadModelAndSound('assets/BLUE.gltf', [-17, -11, 0], [40, 40, 40], 'assets/BLUE.mp3');
-    loadModelAndSound('assets/PURPLE.gltf', [27, 1, 0], [33, 33, 33], 'assets/YELLOW.mp3');
-    loadModelAndSound('assets/REDBAD.gltf', [70, -40, 0], [3, 3, 3], 'assets/REDDDD.mp3');
-    loadModelAndSound('assets/G.gltf', [130, 20, 0], [70, 70, 70], 'assets/HIGLOBBY2.mp3'); // Title model "glob"
+    loadModelAndSound('assets/PURPLE.gltf', [27, 1, 0], [33, 33, 33], 'assets/GLOBBY!.mp3');
+    loadModelAndSound('assets/REDBAD.gltf', [68, -40, 0], [3, 3, 3], 'assets/REDDDD.mp3');
+    loadModelAndSound('assets/G.gltf', [135, 20, 0], [70, 70, 70], 'assets/HIGLOBBY2.mp3'); // Title model "glob"
+    loadModelAndSound('assets/YELLOW.gltf', [-39, -33, 0], [1.5, 1.5, 1.5], 'assets/YELLOW.mp3');
+    loadModelAndSound('assets/TEAL.gltf', [4, 20, 0], [2, 2, 2], 'assets/BLUE.mp3');
+
+
+
+
     ////////NUMBERS////////
     loadModelAndSound('assets/ONE.gltf', [427, -90, 0], [500, 500, 500], 'assets/1.mp3'); // 
-    loadModelAndSound('assets/TWO.gltf', [505, -120, 0], [600, 600, 600], 'assets/2.mp3'); // 
+    loadModelAndSound('assets/TWO.gltf', [507, -115, 0], [600, 600, 600], 'assets/2.mp3'); // 
     loadModelAndSound('assets/THREE.gltf', [515, -120, 0], [600, 600, 600], 'assets/3.mp3'); // 
-    loadModelAndSound('assets/FOUR.gltf', [510, -130, 0], [600, 600, 600], 'assets/4.mp3'); // 
+    loadModelAndSound('assets/FOUR.gltf', [510, -128, 0], [600, 600, 600], 'assets/4.mp3'); // 
     loadModelAndSound('assets/FIVE.gltf', [510, -114, 0], [600, 600, 600], 'assets/5.mp3'); // 
-    loadModelAndSound('assets/SIX.gltf', [450, -145, 0], [700, 700, 700], 'assets/6.mp3'); // 
+    loadModelAndSound('assets/SIX.gltf', [447, -140, 0], [700, 700, 700], 'assets/6.mp3'); // 
     loadModelAndSound('assets/SEVEN.gltf', [439, -150, 0], [700, 700, 700], 'assets/7.mp3'); // 
     loadModelAndSound('assets/EIGHT.gltf', [397, -141, 0], [650, 650, 650], 'assets/8.mp3');
-    loadModelAndSound('assets/NINE.gltf', [321, -126, 0], [550, 550, 550], 'assets/9.mp3');
-    loadModelAndSound('assets/TEN.gltf', [165, -55, 0], [200, 200, 200], 'assets/10.mp3');
+    loadModelAndSound('assets/NINE.gltf', [324, -124, 0], [550, 550, 550], 'assets/9.mp3');
+    loadModelAndSound('assets/TEN.gltf', [163, -55, 0], [200, 200, 200], 'assets/10.mp3');
 
 
     animate();
@@ -118,4 +124,4 @@ function loadModelAndSound(modelUrl, position, scale, soundUrl) {
     });
 }
 
-init(); // Start the application
+init(); 
