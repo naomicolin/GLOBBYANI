@@ -6,9 +6,9 @@ import { OrbitControls } from 'https://unpkg.com/three@0.162.0/examples/jsm/cont
 import { GLTFLoader } from 'https://unpkg.com/three@0.162.0/examples/jsm/loaders/GLTFLoader.js';
 
 ///////CREATE SCENE //////////////////
-let scene, camera, renderer, green, orange, red, blue, glob, redddd, clock;
+let scene, camera, renderer, green, orange, red, blue, glob, redbad, purple, clock;
 let sceneContainer = document.querySelector("#scene-container");
-let mixerGreen, mixerOrange, mixerRed, mixerBlue, mixerGlob, mixerRedddd; // Separate mixers for each animated object
+let mixerGreen, mixerOrange, mixerRed, mixerBlue, mixerGlob, mixerRedbad, mixerPurple; // Separate mixers for each animated object
 
 // Audio variables
 let listener, sound, audioLoader;
@@ -56,7 +56,8 @@ function animate() {
     if (mixerRed) mixerRed.update(delta);
     if (mixerBlue) mixerBlue.update(delta);
     if (mixerGlob) mixerGlob.update(delta);
-    if (mixerRedddd) mixerRedddd.update(delta);
+    if (mixerRedbad) mixerRedbad.update(delta);
+    if (mixerPurple) mixerPurple.update(delta);
 
     renderer.render(scene, camera);
 }
@@ -344,6 +345,129 @@ loader.load('assets/G.gltf', function (gltf) {
     }, undefined, function (error) {
         console.error('An error happened while loading the model:', error);
     });
+
+
+
+
+
+    //////RED GLOBBY 2/////////// 
+    loader.load('assets/REDBAD.gltf', function (gltf) {
+        redbad = gltf.scene;
+        scene.add(redbad);
+        redbad.scale.set(3, 3, 3);
+    
+        // Set position of the red model
+        redbad.position.set(70, -33, 0);
+
+                // Rotate the model to face forward
+    redbad.rotation.y = -Math.PI/7;  // Rotate 180 degrees around the Y-axis
+    redbad.rotation.x = -Math.PI/5; 
+    
+
+
+
+    
+        mixerRedbad = new THREE.AnimationMixer(redbad);
+        gltf.animations.forEach(clip => {
+            let actionRedbad = mixerRedbad.clipAction(clip);
+            actionRedbad.play();
+        });
+    
+        
+        audioLoader.load('assets/REDDDD.mp3', function(buffer) {
+            sound.setBuffer(buffer);
+            sound.setLoop(false);
+            sound.setVolume(0.5);
+        });
+    
+        // Add event listener to the model for click interaction
+        renderer.domElement.addEventListener('click', function(event) {
+            // Calculate mouse position in normalized device coordinates (-1 to +1) for both components.
+            const mouse = new THREE.Vector2();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    
+            // Raycaster for detecting clicks on the model
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+    
+            // Check if the ray intersects the glob model
+            const intersects = raycaster.intersectObject(redbad, true);
+            if (intersects.length > 0) {
+                sound.play();
+            }
+        });
+    
+    }, undefined, function (error) {
+        console.error('An error happened while loading the model:', error);
+    });
+
+
+
+
+
+
+
+
+    //////PURPLE GLOBBY/////////// 
+    loader.load('assets/PURPLE.gltf', function (gltf) {
+        purple = gltf.scene;
+        scene.add(purple);
+        purple.scale.set(33, 33, 33);
+    
+        // Set position of the red model
+        purple.position.set(43, 1, -0);
+
+        // Rotate the model to face forward
+    purple.rotation.y = -Math.PI/4;  // Rotate 180 degrees around the Y-axis
+
+    
+        mixerPurple = new THREE.AnimationMixer(purple);
+        gltf.animations.forEach(clip => {
+            let actionPurple = mixerPurple.clipAction(clip);
+            actionPurple.play();
+        });
+    
+        
+        audioLoader.load('assets/YELLOW.mp3', function(buffer) {
+            sound.setBuffer(buffer);
+            sound.setLoop(false);
+            sound.setVolume(0.5);
+        });
+    
+        // Add event listener to the model for click interaction
+        renderer.domElement.addEventListener('click', function(event) {
+            // Calculate mouse position in normalized device coordinates (-1 to +1) for both components.
+            const mouse = new THREE.Vector2();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    
+            // Raycaster for detecting clicks on the model
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+    
+            // Check if the ray intersects the glob model
+            const intersects = raycaster.intersectObject(purple, true);
+            if (intersects.length > 0) {
+                sound.play();
+            }
+        });
+    
+    }, undefined, function (error) {
+        console.error('An error happened while loading the model:', error);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
