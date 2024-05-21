@@ -47,24 +47,35 @@ function init() {
     loadModelAndSound('assets/RED.gltf', [-50, 1, 0], [5, 5, 5], 'assets/RED.mp3');
     loadModelAndSound('assets/BLUE.gltf', [-17, -11, 0], [40, 40, 40], 'assets/BLUE.mp3');
     loadModelAndSound('assets/PURPLE.gltf', [27, 1, 0], [33, 33, 33], 'assets/GLOBBY!.mp3');
-    loadModelAndSound('assets/REDBAD.gltf', [68, -40, 0], [3, 3, 3], 'assets/REDDDD.mp3');
+    loadModelAndSound('assets/REDBAD.gltf', [69, -40, 0], [3, 3, 3], 'assets/REDDDD.mp3');
     loadModelAndSound('assets/G.gltf', [135, 20, 0], [70, 70, 70], 'assets/HIGLOBBY2.mp3'); // Title model "glob"
-    loadModelAndSound('assets/YELLOW.gltf', [-39, -33, 0], [1.5, 1.5, 1.5], 'assets/YELLOW.mp3');
+    loadModelAndSound('assets/YELLOW.gltf', [-46, -36, 0], [1.5, 1.5, 1.5], 'assets/YELLOW.mp3');
     loadModelAndSound('assets/TEAL.gltf', [4, 20, 0], [2, 2, 2], 'assets/BLUE.mp3');
+
+
+
+    //////////LETTERS///////
+    loadModelAndSound('assets/LETTERG.gltf', [88, -29, 0], [80, 80, 80], 'assets/GREEN.mp3');
+    loadModelAndSound('assets/LETTERL.gltf', [88.4, -35, 0], [80, 80, 80], 'assets/BLUE.mp3');
+    loadModelAndSound('assets/LETTERO.gltf', [93.3, -34, 0], [82, 82, 82], 'assets/RED.mp3');
+    loadModelAndSound('assets/LETTERB.gltf', [91, -35, 0], [80, 80, 80], 'assets/YELLOW.mp3');
+    loadModelAndSound('assets/LETTERBB.gltf', [91, -35, 0], [80, 80, 80], 'assets/GREEN.mp3');
+    loadModelAndSound('assets/LETTERY.gltf', [92, -35, 0], [80, 80, 80], 'assets/BLUE.mp3');
+    loadModelAndSound('assets/LETTER!.gltf', [92, -35, 0], [80, 80, 80], 'assets/REDDDD.mp3');
 
 
 
 
     ////////NUMBERS////////
-    loadModelAndSound('assets/ONE.gltf', [427, -90, 0], [500, 500, 500], 'assets/1.mp3'); // 
+    loadModelAndSound('assets/ONE.gltf', [429, -90, 0], [500, 500, 500], 'assets/1.mp3'); // 
     loadModelAndSound('assets/TWO.gltf', [507, -115, 0], [600, 600, 600], 'assets/2.mp3'); // 
-    loadModelAndSound('assets/THREE.gltf', [515, -120, 0], [600, 600, 600], 'assets/3.mp3'); // 
-    loadModelAndSound('assets/FOUR.gltf', [510, -128, 0], [600, 600, 600], 'assets/4.mp3'); // 
-    loadModelAndSound('assets/FIVE.gltf', [510, -114, 0], [600, 600, 600], 'assets/5.mp3'); // 
+    loadModelAndSound('assets/THREE.gltf', [515, -117, 0], [600, 600, 600], 'assets/3.mp3'); // 
+    loadModelAndSound('assets/FOUR.gltf', [512, -128, 0], [600, 600, 600], 'assets/4.mp3'); // 
+    loadModelAndSound('assets/FIVE.gltf', [516, -114, 0], [600, 600, 600], 'assets/5.mp3'); // 
     loadModelAndSound('assets/SIX.gltf', [447, -140, 0], [700, 700, 700], 'assets/6.mp3'); // 
-    loadModelAndSound('assets/SEVEN.gltf', [439, -150, 0], [700, 700, 700], 'assets/7.mp3'); // 
-    loadModelAndSound('assets/EIGHT.gltf', [397, -141, 0], [650, 650, 650], 'assets/8.mp3');
-    loadModelAndSound('assets/NINE.gltf', [324, -124, 0], [550, 550, 550], 'assets/9.mp3');
+    loadModelAndSound('assets/SEVEN.gltf', [415, -118, 0], [700, 700, 700], 'assets/7.mp3'); // 
+    loadModelAndSound('assets/EIGHT.gltf', [449, -121, 0], [650, 650, 650], 'assets/8.mp3');
+    loadModelAndSound('assets/NINE.gltf', [327, -125, 0], [550, 550, 550], 'assets/9.mp3');
     loadModelAndSound('assets/TEN.gltf', [163, -55, 0], [200, 200, 200], 'assets/10.mp3');
 
 
